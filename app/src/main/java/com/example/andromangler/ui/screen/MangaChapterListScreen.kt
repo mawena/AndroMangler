@@ -78,25 +78,8 @@ fun MangaChapterListScreen(navController: NavController, chapterViewModel: Chapt
             val screenWidth = LocalConfiguration.current.screenWidthDp.dp
             val halfScreenWidth = (screenWidth / 2).coerceAtMost(screenWidth)
             LazyColumn{
-                itemsIndexed(chapterList) {index, chapterItem: ChapterItem ->
-                    if (index % 2 == 0) {
-                        Row(modifier = Modifier.fillParentMaxWidth()) {
-                            Box(
-                                modifier = Modifier
-                                    .width(halfScreenWidth)
-                            ) {
-                                ChapterCard(navController, chapterItem)
-                            }
-                            if (index + 1 < chapterList.size) {
-                                Box(
-                                    modifier = Modifier
-                                        .width(halfScreenWidth)
-                                ) {
-                                    ChapterCard(navController, chapterList[index + 1])
-                                }
-                            }
-                        }
-                    }
+                items(chapterList) {chapterItem: ChapterItem ->
+                    ChapterCard(navController, chapterItem)
                 }
             }
         }

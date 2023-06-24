@@ -6,6 +6,6 @@ import javax.inject.Inject
 
 class GetChapterListByMangaUseCase @Inject constructor(private val chapterRepository: ChapterRepository) {
     suspend operator fun invoke(mangaToken: String): List<ChapterItem>{
-        return chapterRepository.getByManga(mangaToken).shuffled().sortedByDescending { it.number }
+        return chapterRepository.getByManga(mangaToken).shuffled().sortedByDescending { it.title }
     }
 }

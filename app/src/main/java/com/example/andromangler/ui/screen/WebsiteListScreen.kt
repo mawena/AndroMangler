@@ -123,12 +123,12 @@ fun WebsiteCard(navController: NavController, website: WebsiteItem) {
                 color = Color.Black,
                 fontWeight = FontWeight.Bold,
                 textAlign = TextAlign.Center,
-                modifier = Modifier.padding(top = 10.dp)
+                modifier = Modifier.padding(top = 10.dp, bottom = 10.dp)
             )
-            Row(modifier = Modifier.padding(bottom = 10.dp)) {
-                Text(text ="Lien: ", fontWeight = FontWeight.Bold, color = Color.Black)
-                Text(website.link, color = Color.Black)
-            }
+//            Row(modifier = Modifier.padding(bottom = 10.dp)) {
+//                Text(text ="Lien: ", fontWeight = FontWeight.Bold, color = Color.Black)
+//                Text(website.link, color = Color.Black)
+//            }
         }
     }
 }
